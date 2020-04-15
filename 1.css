@@ -1,0 +1,151 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 62.5%;
+  background-color: #e3e3e3;
+}
+
+body {
+  font-size: 1.6rem;
+}
+
+#header {
+  width: 100%;
+  overflow: hidden;
+}
+
+#header p {
+  width: 100%;
+  text-align: center;
+  padding-top: 2rem;
+  font-size: 2.5rem;
+  letter-spacing: 2rem;
+}
+
+#mid {
+  width: 75rem;
+  overflow: hidden;
+  margin: 0 auto;
+  margin-top: 10rem;
+  background-color: #fff;
+  border: 0.1rem solid #000;
+  border-radius: 1rem;
+  box-shadow: 10px 10px 5px #888888;
+}
+
+#mid p {
+  width: 100%;
+  text-align: center;
+  font-size: 2rem;
+}
+
+#mid p:nth-child(1) {
+  margin-top: 2.5rem;
+}
+
+#mid p:nth-child(1) span {
+  display: inline-block;
+  width: 20rem;
+  height: 3rem;
+  line-height: 3rem;
+  background-color: #ffa200;
+  margin-left: 2rem;
+  color: #fff;
+  border-radius: 1.5rem 1.5rem 1.5rem 1.5rem;
+  cursor: pointer;
+}
+
+#mid p:nth-child(1) span:hover {
+  background-color: #ef3473;
+  color: #000;
+}
+
+#update {
+  border: 0.1rem dashed #000;
+  width: 60rem;
+  height: 30rem;
+  position: relative;
+  margin: 1rem auto;
+  border-radius: 1rem;
+}
+
+#update span {
+  position: absolute;
+  z-index: 5;
+  width: 100%;
+  line-height: 3rem;
+  display: block;
+  left: 17rem;
+  top: 3rem;
+  font-size: 2rem;
+}
+
+
+#file {
+  width: 60rem;
+  height: 30rem;
+  position: absolute;
+  z-index: 10;
+  opacity: 0;
+}
+
+#cross {
+  background:#e3e3e3;
+  height: 15rem;
+  position: absolute;
+  width: 2rem;
+  left: 28rem;
+  top: 8rem;
+}
+
+#update:after {
+  background: #e3e3e3;
+  content: "";
+  height: 2rem;
+  left: 21rem;
+  position: absolute;
+  top: 14rem;
+  width: 15rem;
+}
+
+#last{
+  width: 100%;
+  height: 5rem;
+  margin-bottom: 5rem;
+}
+
+#last input{
+  width: 60rem;
+  height: 4rem;
+  margin-bottom: 1rem;
+  margin-top: 1rem;
+  letter-spacing: 2rem;
+}
+
+#footer{
+  width: 100%;
+  overflow: hidden;
+}
+#footer p{
+  text-align: center;
+  padding-top: 4rem;
+}
+
+#footer p a:hover{
+  color: red;
+}
+
+a{
+    text-decoration: none;
+     color: #000;
+}
+
+#show1{
+  display: block;
+  width: 5rem;
+  margin-top: 10rem;
+  margin-left: 7rem;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<!--
+  @禾下月
+  @小小窝
+  @v1.1 2020.4.12
+  初步完成上传，下载，删除
+  文件的名称，大小，上传时间，
+-->
+<html lang="ZH_CN">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文件管理系统</title>
+  <link rel="stylesheet" href="1.css" />
+</head>
+
+<body>
+  <div id="header">
+    <p>文件管理 </p>
+  </div>
+  <div id="mid">
+    <form action="save.php" method="post" enctype="multipart/form-data">
+      <p> <span><a href="index.html">上传文件</a></span>
+        <span><a href="index1.php">文件列表</a></span></p>
+      <div id="update">
+        <span id="show2">点击上传文件/拖拽文件至此</span>
+        <input type="file" name="file" id="file" required="required" onchange="show()">
+        <span id="show1"></span>
+        <div id="cross"></div>
+        <!--十字形-->
+      </div>
+      <p id="last"><input type="submit" name="submit" value="提交文件" id="sub" ></p>
+    </form>
+  </div>
+  <div id="footer">
+    <p><a href="http://hxyxyz.top">@禾下月/小小窝</a></p>
+  </div>
+  <script src="1.js"></script>
+</body>
+
+</html>
