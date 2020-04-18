@@ -44,7 +44,11 @@
 
   #body {
     overflow: hidden;
-    margin-left: 25rem;
+    text-align: center;
+  }
+
+  table {
+    margin: auto;
   }
 
   th,
@@ -53,23 +57,30 @@
     height: 3rem;
     text-align: center;
   }
+
+  td:nth-child(1) {
+    width: 30rem;
+  }
 </style>
 
 
 <div id="header">
-  <p>文件管理/<a href="index.html">首页</a></p>
+  <p>文件管理/<a href="index.html">首页</a>/
+  <a href="imgshow.php">图片预览</a>
+</p>
 </div>
 
 
 
 <div id="body">
-  <table border="2rem" cellspacing="0">
+  <table border="2rem" cellspacing="0" align="center">
     <tr>
       <th>文件名</th>
       <th>大小</th>
       <th>上传时间</th>
       <th>下载</th>
       <th>删除</th>
+
     </tr>
     <?php
     error_reporting(0);
@@ -111,16 +122,36 @@
           //获取文件大小  转码
           $a = iconv("utf-8", "gbk", $a);
           echo "<td>";
-          echo  round(filesize($a) / 1024) . "kB";
+          $size= filesize($a);
+          if(($size/1024)<1)
+          {
+            echo  round($size) ."B";
+          }
+          else{
+             if($size/(1024*1024)<1)
+              echo  round($size/1024) . "KB";
+             
+              else {
+              if ($size / (1024 * 1024*1024) < 1)
+                echo  round($size/(1024 * 1024)) . "M";
+               
+              else{
+                if ($size / (1024 * 1024 * 1024*1024) < 1)
+                  echo  round($size/(1024 * 1024*1024)) . "G";
+              }
+              }
+          }
+
           echo "</td>";
           //上传时间
           echo "<td>";
           echo date("Y-m-d H:i:s", filemtime($a));
           echo "</td>";
+          //下载
           $a = iconv("gbk", "utf-8", $a);
           echo "<td>";
           echo "<button>";
-          echo "<a href=' $a'>";
+          echo "<a href=' $a' download >";
           echo "下载";
           echo "</a>";
           echo "</button>";
@@ -134,6 +165,9 @@
           echo "</a>";
           echo "</button>";
           echo "</td>";
+
+
+
           echo "</tr>";
         }
       }

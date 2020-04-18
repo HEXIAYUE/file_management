@@ -52,10 +52,11 @@ body {
   height: 3rem;
   line-height: 3rem;
   background-color: #ffa200;
-  margin-left: 2rem;
+  margin-left: -2rem;
   color: #fff;
   border-radius: 1.5rem 1.5rem 1.5rem 1.5rem;
   cursor: pointer;
+
 }
 
 #mid p:nth-child(1) span:hover {
@@ -143,9 +144,11 @@ a{
      color: #000;
 }
 
+/*span在中间 上传文件名字居中*/
 #show1{
   display: block;
-  width: 5rem;
-  margin-top: 10rem;
-  margin-left: 7rem;
+  width: 60rem;
+  margin-top: 10.5rem;
+  margin-left: -17rem;
+  text-align: center;
 }

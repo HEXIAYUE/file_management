@@ -1,4 +1,11 @@
  <?php
+  header("Content-type: text/html; charset=utf-8");
+ //判断目录upload是否存在 如果不存在 就创建
+ $drupload= "upload";
+ if((file_exists($drupload))==0)
+  {
+mkdir($drupload);
+  }
   if ($_FILES["file"]["error"] > 0) {
     echo "错误：: " . $_FILES["file"]["error"] . "<br>";
   } else {
