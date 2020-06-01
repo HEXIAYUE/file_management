@@ -1,12 +1,4 @@
 <style>
-  html,
-  body {
-    height: 100%;
-    font-size: 62.5%;
-    background-color: #e3e3e3;
-  }
-
-
   .container {
     width: 100%;
     display: -webkit-flex;
@@ -35,6 +27,7 @@
     vertical-align: middle;
     justify-content: space-around;
     align-items: center;
+   
   }
 
   .itm p {
@@ -44,31 +37,11 @@
     line-height: 2rem;
   }
 
-  a {
-    text-decoration: none;
-    color: #000;
-  }
 
-  a:hover {
-    color: red;
-  }
-
-
-  #header {
-    width: 100%;
-    overflow: hidden;
-  }
-
-  #header p {
-    width: 100%;
-    text-align: center;
-
-    font-size: 2.5rem;
-    letter-spacing: 2rem;
-  }
 </style>
+<link rel="stylesheet" href="css/common.css" />
 <div id="header">
-  <p>文件预览/<a href="index.html">首页</a>/<a href="index1.php">文件管理</a></p>
+  <p>文件预览/<a href="index.html">首页</a>/<a href=""file_show.html">文件管理</a></p>
 </div>
 <div class="container">
   <?php
@@ -82,9 +55,10 @@
   {
     //1、首先先读取文件夹
     $temp = scandir($date);
-
+      $i=0;
     //遍历文件夹
     foreach ($temp as $v) {
+      
       $a = $date . '/' . $v;
       if (is_dir($a)) { //如果是文件夹则执行
 
@@ -106,10 +80,15 @@
           echo "$a";
           echo "</a>";
           echo "</p>";
-
           echo "</div>";
+          $i++;
         }
       }
+    }
+    if($i==0){
+      echo "<p style=' text-align: center;width:100%;margin-top:15%;font-size:2rem;'>";
+      echo "没有图片";
+      echo "</p>";
     }
   }
 

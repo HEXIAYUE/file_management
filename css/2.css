@@ -1,0 +1,30 @@
+button {
+  width: 7rem;
+  height: 2.5rem;
+
+}
+
+
+#body {
+  overflow: hidden;
+  text-align: center;
+}
+
+table {
+  margin: auto;
+}
+
+th,
+td {
+  width: 20rem;
+  height: 3rem;
+  text-align: center;
+}
+
+td:nth-child(1) {
+  width: 30rem;
+}
+
+i {
+  margin-left: 2rem;
+}

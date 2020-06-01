@@ -1,0 +1,43 @@
+  * {
+    margin: 0;
+    padding: 0;
+  }
+
+  html {
+    font-size: 62.5%;
+    background-color: #e3e3e3;
+    height: 100%;
+  }
+  @media screen and (max-width:750px){
+   html{
+     font-size: 5px;
+   }
+  }
+  body {
+    font-size: 1.6rem;
+  }
+
+  #header {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  #header p {
+    width: 100%;
+    text-align: center;
+    padding-top: 2rem;
+    font-size: 2.5rem;
+    letter-spacing: 2rem;
+  }
+
+  a {
+    text-decoration: none;
+    color: #000;
+  }
+
+  a:hover {
+    color: red;
+  }
+  input,button{
+    cursor: pointer;
+  }

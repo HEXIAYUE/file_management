@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文件界面</title>
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/iconfont.css" />
+  <link rel="stylesheet" href="css/2.css" />
+  <script src="js/vue.js"></script>
+  <script src="js/axios.min.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <div id="header">
+      <p>文件管理/<a href="index.html">首页</a>
+        <a href="imgshow.php">图片预览</a>
+      </p>
+    </div>
+
+    <div id="body">
+      <table border="2rem" cellspacing="0" align="center">
+        <tr>
+          <th>文件名
+
+            <a href="sort.php?m=0&n=1"> <i class="iconfont">&#xe637;</i></a>
+          </th>
+          <th>大小
+
+            <a href="sort.php?m=1&n=1"> <i class="iconfont">&#xe637;</i></a>
+          </th>
+          <th>上传时间
+
+            <a href="so
+            rt.php?m=2&n=1"> <i class="iconfont">&#xe637;</i></a>
+          </th>
+          <th>下载</th>
+          <th>删除</th>
+        </tr>
+
+        <tr v-for="(item, index) in res" :key="index">
+          <td>{{item.name}}</td>
+          <td>{{item.size}}</td>
+          <td>{{item.time}}</td>
+          <td>
+            <a :href="item.url" download>
+              <button>下载</button>
+            </a>
+          </td>
+          <td>
+            <a :href="getGoodsHref(item.url)">
+              <button>删除</button>
+            </a>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <script src="js/2.js"></script>
+</body>
+
+</html>

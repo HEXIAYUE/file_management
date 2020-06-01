@@ -21,5 +21,5 @@ mkdir($drupload);
       move_uploaded_file($_FILES["file"]["tmp_name"], "upload/" . $_FILES["file"]["name"]);
     }
   }
-header("Location: index1.php");
+header("Location: file_show.html");
   ?>

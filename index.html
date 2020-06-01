@@ -5,6 +5,21 @@
   @v1.1 2020.4.12
   初步完成上传，下载，删除
   文件的名称，大小，上传时间，
+
+  ## @v1.2 2020.4.18 <br>
+  1.修改首页文件上传是跳转首页而不是上传文件的的逻辑<br>
+  2.自动建立upload文件夹。<br>
+  3.上传文件的名字居中处理<br>
+  4.添加图片预览功能<br>
+  5.添加b，kb，m，g 单位<br>
+  6.修复点击文件目录按钮空白处 无反应的逻辑<br>
+  7.修复点击下载图片 直接打开的逻辑，变为直接下载。<br>
+
+  ## @2.1 2020.6.1 <br>
+  1.优化代码，目录结构 <br>
+  2.使用vue来重构项目<br>
+  3.改进ui<br>
+  4.适配移动端<br>
 -->
 <html lang="ZH_CN">
 
@@ -12,7 +27,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>文件管理系统</title>
-  <link rel="stylesheet" href="1.css" />
+  <link rel="stylesheet" href="css/1.css" />
+  <link rel="stylesheet" href="css/common.css" />
 </head>
 
 <body>
@@ -21,8 +37,8 @@
   </div>
   <div id="mid">
     <form action="save.php" method="post" enctype="multipart/form-data">
-      <p> 
-      <a href="index1.php"><span>文件列表</span></a></p>
+      <p>
+        <a href="file_show.html"><span>文件列表</span></a></p>
       <div id="update">
         <span id="show2">点击上传文件/拖拽文件至此</span>
         <input type="file" name="file" id="file" required="required" onchange="show()">
@@ -30,13 +46,13 @@
         <div id="cross"></div>
         <!--十字形-->
       </div>
-      <p id="last"><input type="submit" name="submit" value="提交文件" id="sub" ></p>
+      <p id="last"><input type="submit" name="submit" value="提交文件" id="sub"></p>
     </form>
   </div>
   <div id="footer">
     <p><a href="http://hxyxyz.top">@禾下月/小小窝</a></p>
   </div>
-  <script src="1.js"></script>
+  <script src="js/1.js"></script>
 </body>
 
 </html>
