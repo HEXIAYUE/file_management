@@ -23,18 +23,18 @@
     <div id="body">
       <table border="2rem" cellspacing="0" align="center">
         <tr>
-          <th>文件名
-
-            <a href="sort.php?m=0&n=1"> <i class="iconfont">&#xe637;</i></a>
+          <th>
+            <span>文件名</span>
+           <i v-if="name" class="iconfont" @click.stop="list_name()">&#xe637;</i>
+           <i v-else class="iconfont" @click.stop="list_name()">&#xe62e;</i>
           </th>
-          <th>大小
-
-            <a href="sort.php?m=1&n=1"> <i class="iconfont">&#xe637;</i></a>
+          <th><span>大小</span>
+         <i v-if="size" class="iconfont" @click.stop="list_size()">&#xe637;</i>
+         <i v-else class="iconfont" @click.stop="list_size()">&#xe62e;</i>
           </th>
-          <th>上传时间
-
-            <a href="so
-            rt.php?m=2&n=1"> <i class="iconfont">&#xe637;</i></a>
+          <th><span>上传时间</span>
+           <i v-if="time" class="iconfont" @click.stop="list_time()">&#xe637;</i>
+           <i v-else class="iconfont" @click.stop="list_time()">&#xe62e;</i>
           </th>
           <th>下载</th>
           <th>删除</th>
@@ -42,7 +42,7 @@
 
         <tr v-for="(item, index) in res" :key="index">
           <td>{{item.name}}</td>
-          <td>{{item.size}}</td>
+          <td>{{item.size |pan_size}}</td>
           <td>{{item.time}}</td>
           <td>
             <a :href="item.url" download>

@@ -1,6 +1,6 @@
 button {
   width: 7rem;
-  height: 2.5rem;
+  overflow: hidden;
 
 }
 
@@ -27,4 +27,10 @@ td:nth-child(1) {
 
 i {
   margin-left: 2rem;
+  cursor: pointer;
 }
+
+#body th div{
+  display: inline-block;
+}
+
