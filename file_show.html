@@ -13,10 +13,11 @@
 </head>
 
 <body>
+
   <div id="app">
     <div id="header">
-      <p>文件管理/<a href="index.html">首页</a>
-        <a href="imgshow.php">图片预览</a>
+      <p>文件列表/<a href="index.html">首页/</a>
+        <a href="image_show.html">图片预览</a>
       </p>
     </div>
 
@@ -25,16 +26,16 @@
         <tr>
           <th>
             <span>文件名</span>
-           <i v-if="name" class="iconfont" @click.stop="list_name()">&#xe637;</i>
-           <i v-else class="iconfont" @click.stop="list_name()">&#xe62e;</i>
+            <i v-if="name" class="iconfont" @click.stop="list_name()">&#xe637;</i>
+            <i v-else class="iconfont" @click.stop="list_name()">&#xe62e;</i>
           </th>
           <th><span>大小</span>
-         <i v-if="size" class="iconfont" @click.stop="list_size()">&#xe637;</i>
-         <i v-else class="iconfont" @click.stop="list_size()">&#xe62e;</i>
+            <i v-if="size" class="iconfont" @click.stop="list_size()">&#xe637;</i>
+            <i v-else class="iconfont" @click.stop="list_size()">&#xe62e;</i>
           </th>
           <th><span>上传时间</span>
-           <i v-if="time" class="iconfont" @click.stop="list_time()">&#xe637;</i>
-           <i v-else class="iconfont" @click.stop="list_time()">&#xe62e;</i>
+            <i v-if="time" class="iconfont" @click.stop="list_time()">&#xe637;</i>
+            <i v-else class="iconfont" @click.stop="list_time()">&#xe62e;</i>
           </th>
           <th>下载</th>
           <th>删除</th>
@@ -45,7 +46,7 @@
           <td>{{item.size |pan_size}}</td>
           <td>{{item.time}}</td>
           <td>
-            <a :href="item.url" download>
+            <a :href="urle(item.url)" :download="item.name">
               <button>下载</button>
             </a>
           </td>

@@ -1,53 +1,54 @@
 const app = new Vue({
-      el: "#app",
-      data: {
-        res: "",
-        name: true,
-        size: true,
-        time: true,
-      },
-     
-      filters: {
-        //计算文件的单位
-        pan_size(value) {
-          if ((value / 1024) < 1) {
-          return Math.round(value) + "b";
-          } 
-          else if ((value / (1024 * 1024)) < 1)
-          {
-           return   Math.round(value / 1024) + "Kb";
-          }
-          else if ((value / (1024 * 1024 * 1024)) < 1)
-          {
-         return   Math.round(value / (1024 * 1024)) + "M";
-          }
-          else if ((value / (1024 * 1024 * 1024 * 1024)) < 1)
-          {
-          return  Math.round(value / (1024 * 1024 * 1024)) + "G";
-          }
-           
-    }
-   
+  el: "#app",
+  data: {
+    res: "",
+    name: true,
+    size: true,
+    time: true,
   },
 
-methods: {
+  filters: {
+    //计算文件的单位
+    pan_size(value) {
+      if ((value / 1024) < 1) {
+        return Math.round(value) + "b";
+      } else if ((value / (1024 * 1024)) < 1) {
+        return Math.round(value / 1024) + "Kb";
+      } else if ((value / (1024 * 1024 * 1024)) < 1) {
+        return Math.round(value / (1024 * 1024)) + "M";
+      } else if ((value / (1024 * 1024 * 1024 * 1024)) < 1) {
+        return Math.round(value / (1024 * 1024 * 1024)) + "G";
+      }
+
+    },
+    cut(value) {
+      //过滤掉前面的路径 ../upload
+      value.slice(3);
+      return encodeURI(value);
+    },
+
+
+  },
+
+  methods: {
     ajax() {
-      axios.post("ajax.php", {
+      axios.post("php/ajax.php", {
           params: {}
         })
         .then(function (response) {
           console.log(response.data);
           app.res = response.data;
           console.log(app.res);
-          
+
         })
         .catch(function (error) {
           console.log(error);
         })
       console.log(this.res.length);
     },
+
     getGoodsHref(val) {
-      return 'del.php?url=' + val;
+      return 'php/del.php?url=' + val;
     },
     //文件名
     list_name() {
@@ -78,7 +79,7 @@ methods: {
       this.res.sort(ascend);
       this.size = !this.size;
 
-     
+
       if (this.size == true) {
         this.res.sort(ascend);
       } else {
@@ -99,6 +100,10 @@ methods: {
         this.res.reverse(ascend);
       }
     },
+    urle(value) {
+      return 'php/down.php?url=' + value;
+    },
+
   },
   mounted() {
 

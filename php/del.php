@@ -12,5 +12,5 @@ function delFile($path)
   }
 }
 delFile($a);
-header("Location: file_show.html");
+header("Location: ../file_show.html");
 ?>

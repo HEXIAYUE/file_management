@@ -1,7 +1,7 @@
           <?php
       error_reporting(0);
       header("Content-type: text/html; charset=utf-8");
-      $file = "upload";
+      $file = "../upload";
       function list_file($data)
       {
         $i = 0;
@@ -20,22 +20,25 @@
             list_file($a);//因为是文件夹所以再次调用自己这个函数，把这个文件夹下的文件遍历出来
           } else {
             //名字
-             $v=iconv("gbk","utf-8",$v);//linux 
+             $v=iconv("gbk","utf-8",$v);//linux  
             $name = $v;
-             $a=iconv("gbk","utf-8",$a);//linux 
+              $a=iconv("gbk","utf-8",$a);//linux  
             //大小
             //获取文件大小  转码
-             $a=iconv("utf-8","gbk",$a);//linux 
+              $a=iconv("utf-8","gbk",$a);//linux  
             $size = filesize($a);
               clearstatcache();
 
             //上传时间
               $a=iconv("gbk","utf-8",$a);//linux
-             $a=iconv("utf-8","gbk",$a);//linux 
+             $a=iconv("utf-8","gbk",$a);//linux  
             $date = date("Y-m-d H:i:s", filemtime($a));
             //文件地址
-              $a=iconv("gbk","utf-8",$a);//linux 
-             $url=$a;
+             
+             $url= $a;
+             $url=iconv("gbk","utf-8",$url);//linux 
+           
+             
             //转化成json对象
             $result[$i] = array(
               "name" => $name,

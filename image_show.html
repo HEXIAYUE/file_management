@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>图片预览</title>
+  <link rel="stylesheet" href="css/common.css" />
+  <link rel="stylesheet" href="css/3.css" />
+  <script src="js/vue.js"></script>
+  <script src="js/axios.min.js"></script>
+</head>
+
+<body>
+  <div id="app">
+    <div id="header">
+      <p>图片预览/<a href="../index.html">首页</a>/<a href="../file_show.html">文件列表</a></p>
+    </div>
+    <div class="container">
+      <div class="itm" v-for="(item, index) in img_src">
+        <figure>
+          <img :key="index" :src="item" />
+          <figcaption>
+            <p> <a :href="item">{{item | cutName}}</a></p>
+          </figcaption>
+        </figure>
+      </div>
+      <div>
+      </div>
+    </div>
+
+    <div id="no" v-show="is_show()">
+      <p>没有图片</p>
+    </div>
+  </div>
+  <script src="js/3.js"></script>
+</body>
+
+</html>

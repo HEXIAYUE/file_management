@@ -1,0 +1,43 @@
+ .container {
+   width: 100%;
+   display: -webkit-flex;
+   /* Safari */
+   display: flex;
+   overflow: hidden;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   flex: 1;
+ }
+
+ .container .itm {
+
+   width: 23%;
+   font-size: 1.6rem;
+ }
+
+ .container img {
+   width: auto;
+   height: 30rem;
+   max-width: 100%;
+   min-width: 25%;
+   max-height: 100%;
+   margin: 0 auto;
+   vertical-align: middle;
+   justify-content: space-around;
+   align-items: center;
+
+ }
+
+ .itm p {
+   width: 80%;
+   word-break: break-word;
+   height: 7rem;
+   line-height: 2rem;
+ }
+
+ #no p{
+   text-align: center;
+   width:100%;
+   margin-top:15%;
+   font-size:2rem;
+ }
